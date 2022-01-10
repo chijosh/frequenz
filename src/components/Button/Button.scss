@@ -1,0 +1,89 @@
+@import '../../assets/styles/utils';
+
+@mixin btn-solid($color) {
+  background: $color;
+  border: none;
+  transition: background 0.3s ease;
+  color: $darkest-purple;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    background: darken($color, 8%);
+  }
+
+  &:active {
+    background: darken($color, 15%);
+  }
+}
+
+@mixin btn-hollow($color) {
+  background: transparent;
+  border: solid 1px $white-color;
+  border-radius: 0;
+  color: $white-color;
+  width: 100%;
+
+  &:hover {
+    background: $color;
+    transition: all 0.3s ease;
+    color: $white-color;
+  }
+
+  &:active {
+    background: darken($color, 8%);
+    color: $white-color;
+  }
+}
+
+.btn {
+  width: 130px;
+  height: 40px;
+  // padding: $spacing-00-25 $spacing-00-75;
+  border-radius: 4px;
+  color: $white-color;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include font-button;
+
+  img {
+    margin-right: $spacing-00-50;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__primary {
+    @include btn-solid($primary-color);
+  }
+
+  &__ternary {
+    @include btn-solid($frequenz-green);
+  }
+
+  &__disabled-ternary {
+    background: darken($frequenz-green, 8%);
+    opacity: 0.24;
+    pointer-events: none;
+    width: 100%;
+    color: $darkest-purple;
+  }
+
+  &__danger {
+    @include btn-solid($danger-color);
+  }
+
+  &__primary-hollow {
+    @include btn-hollow($primary-color);
+  }
+}
+
+@include for-phone {
+  .btn {
+    width: 100%;
+    height: 60px;
+  }
+}

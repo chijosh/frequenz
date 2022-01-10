@@ -6,4 +6,3 @@
   - **Chi Joshua** [[https://www.linkedin.com/in/joshua-onyenwere/]]
 - _Technologies Used:_
   - React
-    ]

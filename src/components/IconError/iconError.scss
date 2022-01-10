@@ -1,0 +1,14 @@
+@import '../../assets/styles/utils';
+
+.error-log {
+  @include font-caption;
+  color: $white-color;
+  display: flex;
+  align-items: center;
+
+  svg {
+    padding-right: $spacing-00-50;
+    color: $danger-color;
+    height: 16px;
+  }
+}
