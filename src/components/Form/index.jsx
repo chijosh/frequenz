@@ -171,7 +171,10 @@ function Form() {
             }}
             icon={
               state.isLoading ? (
-                <CircularProgress size={16} className="form-button__circular" />
+                <CircularProgress
+                  size={16}
+                  className="form-actions__circular"
+                />
               ) : null
             }
           />

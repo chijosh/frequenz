@@ -59,5 +59,11 @@
       @include font-body1;
       color: $white-color;
     }
+
+    &__circular {
+      svg {
+        color: black;
+      }
+    }
   }
 }
