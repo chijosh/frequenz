@@ -1,5 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles'
-import Login from './components/Login'
+import LoginForm from './components/Login'
+
+export interface LoginFormProps {
+  title: string
+}
 
 const useStyles = makeStyles({
   root: {
@@ -15,7 +19,7 @@ function App() {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Login />
+      <LoginForm title={'Frequenz'} />
     </div>
   )
 }

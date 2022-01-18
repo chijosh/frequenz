@@ -60,11 +60,11 @@
     @include btn-solid($primary-color);
   }
 
-  &__ternary {
+  &__secondary {
     @include btn-solid($frequenz-green);
   }
 
-  &__disabled-ternary {
+  &__disabled-secondary {
     background: darken($frequenz-green, 8%);
     opacity: 0.24;
     pointer-events: none;

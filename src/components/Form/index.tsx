@@ -14,6 +14,8 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import './Form.scss'
 import GoggleIcon from '../../assets/images/Google.png'
 
+
+
 function Form() {
   const [state, setState] = useState({
     username: '',
@@ -24,12 +26,15 @@ function Form() {
     isValidPassword: false,
     isLoading: false,
     errorLogEmail: false,
-    errorLogPassword: false
+    errorLogPassword: {
+      errorMessage: ''
+    }
+
   })
 
   useEffect(() => {
     if (state.isLoading === false) return null
-    let timer1 = setTimeout(() => {
+    const timer1 = setTimeout(() => {
       setState({ ...state, isLoading: false })
     }, 3000)
     return () => {
@@ -136,7 +141,7 @@ function Form() {
               password: evnt.target.value
             })
           }
-          onBlur={(evnt) => handlePasswordChange(state.password)}
+          onBlur={() => handlePasswordChange(state.password)}
           InputProps={{
             endAdornment: (
               <InputAdornment className="form-body__input-icon" position="end">
@@ -162,8 +167,8 @@ function Form() {
           <Button
             variant={
               !state.isValidPassword || !state.isValidUser
-                ? 'disabled-ternary'
-                : 'ternary'
+                ? 'disabled-secondary'
+                : 'secondary'
             }
             text={!state.isLoading ? 'Login' : null}
             onClick={() => {
@@ -175,16 +180,14 @@ function Form() {
                   size={16}
                   className="form-actions__circular"
                 />
-              ) : null
+              ) : <></>
             }
           />
           <span className="form-actions__span">OR</span>
           <Button
             variant={'primary-hollow'}
             text={'Login with Google'}
-            onClick={() => {
-              setState({})
-            }}
+            onClick={() => { console.log('clicked') }}
             icon={
               <img
                 src={GoggleIcon}

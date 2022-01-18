@@ -1,19 +1,19 @@
+import { FC } from 'react';
+import { LoginFormProps } from '../../App'
 import './HeroTitle.scss'
 
-function index({ text }) {
+const HeroTitle: FC<LoginFormProps> = ({ title }) => {
   return (
     <div>
       <h1
         className="heroTitle-header"
         style={{ marginTop: '80px' }}
-        component="h1"
-        variant="h2"
       >
-        {text}
+        {title}
       </h1>
       <div className="styled-underline" />
     </div>
   )
 }
 
-export default index
+export default HeroTitle
